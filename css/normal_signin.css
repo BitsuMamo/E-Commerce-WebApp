@@ -1,0 +1,240 @@
+/* .modalBody  */
+#signIn_modal .modalContent .modalBody {
+  max-height: 79vh;
+  overflow-y: scroll;
+  background: linear-gradient(-45deg, #3271ef 0%, #4b0bbb 100%, #193978 100%);
+  /* background-color: #ff7700; */
+  border-radius: 0px 0px 23px 23px;
+  z-index: 1052;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+}
+
+
+/* .modaHeader */
+#signIn_modal .modaHeader {
+  display: flex;
+  align-items: center;
+  height: 71px;
+  background-color: white;
+  border-radius: 23px 23px 0px 0px;
+  padding: 19px;
+}
+#signIn_modal .modaHeader .modal-title {
+  margin: auto;
+  font-weight: bold;
+}
+#signIn_modal .modaHeader .icon {
+  height: 40px;
+  width: 40px;
+}
+
+/* main */
+#signIn_modal .modalContent .modalBody .main {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* error */
+#signIn_modal .modalContent .modalBody .alert {
+  display: none;
+  /* width: 47%;
+    height: 127px;
+    background: rebeccapurple;
+    margin: auto;
+    border-radius: 17px; */
+}
+/* form */
+#signIn_modal .modalContent .modalBody form {
+  width: 83%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 58px;
+}
+
+/* row */
+#signIn_modal .modalContent .modalBody form div.Row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#signIn_modal .modalContent .modalBody form div.Row label {
+  margin: auto;
+  margin-bottom: 31px;
+  font-weight: bold;
+  color: white;
+}
+
+/* div.form-group .T */
+#signIn_modal .modalContent .modalBody form div.T {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+}
+
+/* div.form-group */
+#signIn_modal .modalContent .modalBody form div.form-group {
+  width: 47%;
+  position: relative;
+}
+
+/* form label */
+#signIn_modal .modalContent .modalBody form div.form-group label {
+  margin: auto;
+  font-weight: bold;
+  position: absolute;
+  left: 7px;
+  top: 0px;
+
+  color: #8b7f7f;
+  font-weight: bold;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+/* form input */
+#signIn_modal .modalContent .modalBody form input {
+  border-radius: 7px;
+  height: 48px;
+  left: 10px;
+  color: #8b7f7f;
+  font-weight: bold;
+}
+
+/* form button[type="submit"] */
+#signIn_modal .modalContent button[type="submit"] {
+  font-size: 21px;
+  border-radius: 11rem;
+  font-weight: bold;
+
+  position: absolute;
+  height: 44px;
+  width: 200px;
+  top: calc(100% - 45px / 2);
+  left: calc(100% - 50% - 200px / 2);
+  z-index: 1060 !important;
+
+  background-color: white !important;
+  border: 0 !important;
+  color: #ff7700;
+}
+/* spinner color */
+#signIn_modal
+  .modalContent
+  .modalBody
+  form
+  button[type="submit"]
+  .text-secondary {
+  color: #ff7700 !important;
+}
+
+/* .or  */
+#signIn_modal .modalContent .modalBody .or {
+  display: flex;
+  flex-direction: column;
+}
+
+/* google,fa.... */
+#signIn_modal .modalContent .modalBody .or .other {
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+  background: white;
+  margin-right: 0;
+  height: auto;
+  border-radius: 25px 0rem 0rem 25px;
+  padding: 10px;
+}
+#signIn_modal .modalContent .modalBody .or .other div > * {
+  width: fit-content;
+  background-color: transparent;
+  color: currentColor;
+  font-weight: bold;
+  border: 0 !important;
+}
+#signIn_modal .modalContent .modalBody .or .other div > * img {
+  height: 31px;
+  width: 31px;
+}
+#signIn_modal .modalContent .modalBody .or .other .lineB {
+  height: 8px;
+  background: #7da1e9;
+  /* background-color: #f6923b; */
+  width: 84%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 11rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* linkedin button */
+
+#signIn_modal .modalContent .modalBody .or .other #linkedin button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+#signIn_modal .modalContent .modalBody .or .other #linkedin button div {
+  background: transparent !important;
+  border: 0 !important;
+}
+#signIn_modal .modalContent .modalBody .or .other #linkedin button div:hover {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* phone signIn_modal */
+@media only screen and (max-width: 768px) {
+  /* .modalBody .main */
+  #signIn_modal .modalContent .modalBody .main {
+    flex-direction: column !important;
+  }
+  /* form */
+  #signIn_modal .modalContent .modalBody form {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* form div.T */
+  #signIn_modal .modalContent .modalBody form div.T {
+    flex-direction: column;
+  }
+  #signIn_modal .modalContent .modalBody form div.T div.form-group {
+    width: 96% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 33px !important;
+  }
+
+  /* google,fa.... */
+  #signIn_modal .modalContent .modalBody .or .other {
+    width: 95% !important;
+    flex-direction: row;
+    margin: auto;
+    border-radius: 11rem !important;
+    margin-bottom: 42px !important;
+    overflow-x: scroll;
+  }
+  #signIn_modal .modalContent .modalBody .or .other div {
+    height: min-content;
+    width: min-content;
+    display: flex;
+  }
+  #signIn_modal .modalContent .modalBody .or .other .lineB {
+    height: 16px !important;
+    width: 16px !important;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}

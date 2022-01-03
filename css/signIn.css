@@ -1,0 +1,60 @@
+* {
+  outline: 0 !important;
+}
+
+/* signIn_modal */
+#signIn_modal {
+  width: 100vw;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsla(217, 100%, 50%, 1);
+
+background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1 );
+  display: flex;
+  flex-direction: column;
+}
+
+#signIn_modal .modalContent {
+  /* background-color: #424651; */
+  border-radius: 23px;
+  position: relative;
+  z-index: 1051;
+  margin: auto;
+  width: 90%;
+}
+
+/* .modaHeader */
+#signIn_modal .modalContent .modaHeader {
+  display: flex;
+  align-items: center;
+  height: 71px;
+  background-color: white;
+  border-radius: 23px 23px 0px 0px;
+  padding: 19px;
+}
+#signIn_modal .modalContent .modaHeader .modal-title {
+  margin: auto;
+  font-weight: bold;
+}
+#signIn_modal .modalContent .modaHeader .icon {
+  height: 40px;
+  width: 40px;
+}
+
+/* phone signIn_modal */
+@media only screen and (max-width: 768px) {
+  #signIn_modal {
+    max-width: 100% !important;
+  }
+}

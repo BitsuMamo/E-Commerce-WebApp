@@ -1,0 +1,348 @@
+* {
+  outline: 0 !important;
+}
+
+/* signIn_modal */
+#logIn_modal {
+  width: 100vw;
+  max-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: hsla(197, 100%, 63%, 1);
+
+background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+  display: flex;
+  flex-direction: column;
+}
+
+#logIn_modal .modalContent {
+  /* background-color: #424651; */
+  border-radius: 23px;
+  position: relative;
+  z-index: 1051;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20);
+
+
+}
+
+/* .modaHeader */
+#logIn_modal .modalContent .modaHeader {
+  display: flex;
+  align-items: center;
+  height: 71px;
+  background-color: white;
+  border-radius: 23px 23px 0px 0px;
+  padding: 19px;
+}
+#logIn_modal .modalContent .modaHeader .modal-title {
+  margin: auto;
+  font-weight: bold;
+}
+#logIn_modal .modalContent .modaHeader .icon {
+  height: 40px;
+  width: 40px;
+}
+
+/* .modalBody  */
+#logIn_modal .modalContent .modalBody {
+  max-height: 100%;
+  height: 85%;
+  /* background: linear-gradient(-45deg, #3271ef 0%, #4b0bbb 100%, #193978 100%); */
+  /* background-color: #ff6600; */
+  border-radius: 0px 0px 23px 23px;
+  z-index: 1052;
+  position: relative;
+
+  display: flex;
+
+  padding: 0;
+}
+
+/* left img */
+#logIn_modal .modalContent .modalBody img.main_img {
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 0px 0px 23px;
+}
+
+/* main */
+#logIn_modal .modalContent .modalBody .main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  /* background: linear-gradient(-45deg, #3271ef 0%, #4b0bbb 100%, #193978 100%); */
+  background: linear-gradient(#be32ef 0%, #38b6ff 100%, #cd94e9 100%);
+
+  /* background-color: #ff6600; */
+
+  width: 100%;
+}
+
+/* error */
+#logIn_modal .modalContent .modalBody .alert {
+  display: none;
+  /* width: 47%;
+    height: 127px;
+    background: rebeccapurple;
+    margin: auto;
+    border-radius: 17px; */
+}
+
+/* conter for from and or */
+#logIn_modal .modalContent .modalBody .main .main2 {
+  display: flex;
+  height: 100%;
+}
+/* form */
+#logIn_modal .modalContent .modalBody form {
+  width: 100%;
+  margin: auto;
+  margin-left: 67px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* div.form-group */
+#logIn_modal .modalContent .modalBody form div.form-group {
+  width: 82%;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+/* form label */
+#logIn_modal .modalContent .modalBody form div.form-group label {
+  margin: auto;
+  font-weight: bold;
+  position: absolute;
+  left: 7px;
+  top: 0px;
+
+  color: #8b7f7f;
+  font-weight: bold;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* form input */
+#logIn_modal .modalContent .modalBody form input {
+  border-radius: 7px;
+  height: 48px;
+  left: 10px;
+  color: #8b7f7f;
+  font-weight: bold;
+  box-shadow: unset;
+}
+
+/* Keep me signed in and Forget your password?  pos */
+#logIn_modal .modalContent .modalBody form .crnterr {
+  height: 36px;
+  width: 58%;
+  margin: auto;
+  margin-right: 101px;
+  margin-bottom: 20px;
+}
+
+/*  Keep me signed in */
+#logIn_modal .modalContent .modalBody form #Keep {
+  /* background-color: #cf670c; */
+  border: 0 !important;
+  border-radius: 11rem;
+  color: white;
+  font-weight: bold;
+  /* display: flex; */
+  overflow: hidden;
+}
+/* Forget your password?  */
+#logIn_modal .modalContent .modalBody form a.Forget {
+  width: 58%;
+
+  /* background-color: #cf670c; */
+  background-color: #8423b5;
+  border: 0 !important;
+  border-radius: 11rem;
+  color: white;
+  font-weight: bold;
+  /* display: flex; */
+  overflow: hidden;
+}
+
+/* form button[type="submit"] */
+#logIn_modal .modalContent button[type="submit"] {
+  font-size: 21px;
+  border-radius: 11rem;
+  font-weight: bold;
+
+  position: absolute;
+  height: 44px;
+  width: 200px;
+  top: calc(100% - 45px / 2);
+  left: calc(100% - 50% - 200px / 2);
+  z-index: 1060 !important;
+
+  /* background-color: white !important; */
+  background-color: #b032ef !important;
+  border: 0 !important;
+  /* color: #ff7700; */
+  color: white;
+}
+/* spinner color */
+#logIn_modal .modalContent button .text-secondary {
+  color: white !important;
+}
+
+/* .or  */
+#logIn_modal .modalContent .modalBody .or {
+  display: flex;
+  flex-direction: column;
+}
+
+/* google,fa.... */
+#logIn_modal .modalContent .modalBody .or .other {
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+  background: white;
+  margin-right: 0;
+  height: auto;
+  border-radius: 25px 0rem 0rem 25px;
+  padding: 10px;
+}
+#logIn_modal .modalContent .modalBody .or .other button {
+  width: fit-content;
+  background-color: transparent;
+  color: currentColor;
+  font-weight: bold;
+  border: 0 !important;
+}
+#logIn_modal .modalContent .modalBody .or .other button img {
+  height: 31px;
+  width: 31px;
+}
+#logIn_modal .modalContent .modalBody .or .other .lineB {
+  height: 8px;
+  /* background: #7da1e9; */
+  /* background-color: #f6923b; */
+  background-color: #cb80f1;
+  width: 84%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 11rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* linkedin button */
+#logIn_modal .modalContent .modalBody .or .other #linkedin button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+#logIn_modal .modalContent .modalBody .or .other #linkedin button div {
+  background: transparent !important;
+  border: 0 !important;
+}
+#logIn_modal .modalContent .modalBody .or .other #linkedin button div:hover {
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* phone logIn */
+@media only screen and (max-width: 768px) {
+  #logIn_modal .modalContent {
+    display: flex;
+    flex-direction: column;
+  }
+  #logIn_modal {
+    max-width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* .modalBody */
+  #logIn_modal .modalContent .modalBody {
+    flex-direction: column !important;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  /* left img */
+  #logIn_modal .modalContent .modalBody img.main_img {
+    width: 100%;
+    height: 0px;
+    border-radius: 0px 0px 23px 23px !important;
+    filter: blur(4px);
+  }
+  /* .modalBody .main */
+  #logIn_modal .modalContent .modalBody .main {
+    flex-direction: column !important;
+    overflow-y: unset !important;
+    width: 96%;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 0px 0px 23px 23px;
+  }
+
+  /* conter for from and or */
+  #logIn_modal .modalContent .modalBody .main .main2 {
+    flex-direction: column !important;
+    margin-top: 37px;
+    overflow-y: scroll;
+    justify-content: center;
+  }
+
+  /* form */
+  #logIn_modal .modalContent .modalBody form {
+    width: 90% !important;
+    margin: auto;
+    margin-bottom: 0 !important;
+    margin-top: 20px;
+  }
+
+  /* div.form-group */
+  #logIn_modal .modalContent .modalBody form div.form-group {
+    width: 100% !important;
+  }
+
+  /* Keep me signed in and Forget your password?  pos */
+  #logIn_modal .modalContent .modalBody form .crnterr {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 90% !important;
+  }
+
+  /* google,fa.... */
+  #logIn_modal .modalContent .modalBody .or .other {
+    width: 95% !important;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 64px;
+    border-radius: 11rem !important;
+    margin-bottom: 42px !important;
+    overflow-x: scroll;
+  }
+  #logIn_modal .modalContent .modalBody .or .other .lineB {
+    height: 16px !important;
+    width: 16px !important;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
