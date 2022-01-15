@@ -1,0 +1,53 @@
+@import url("./BoxShadow.css");
+
+:root {
+ 
+    --color-secondary: #4553A1;
+    --color-tertiary: #ffffff;
+    --color-black: #000000;
+
+    --color-primary-1: #8EE9F4;
+    --color-primary-2: #63D6E6;
+    --color-primary: #1ECBE1;
+    --color-primary-3: #1399AA;
+    --color-primary-4: #0D5661;
+    --color-primary-5: #1D3235;
+
+    --color-secondary-1: #8E9EF5;
+    --color-secondary-2: #6074E0;
+    --color-secondary: #4553A1;
+    --color-secondary-3: #132AAB;
+    --color-secondary-4: #2A3261;
+    --color-secondary-5: #1D2135;
+
+    --color-subTertiary-1: #8EF4C3;
+    --color-subTertiary-4: #0D6138;
+
+    --color-grey-darker: #252525;
+    --color-grey-dark: #4a4a4a;
+    --color-grey: #ececec;
+
+    --nav-z-index: 10;
+    --hero-min-card-z-index: 5;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.text{
+    margin: 0;
+}
+.title{
+    font-size: large;
+    font-weight: bold;
+    color: var(--color-black);
+    margin-bottom: 5px;
+
+}
+.subTitle{
+    font-size: small;
+    font-weight: 600;
+    color: var(--color-grey-dark);
+
+}

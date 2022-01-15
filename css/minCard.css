@@ -1,0 +1,49 @@
+.minCard{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--hero-min-card-z-index);
+    
+}
+
+.minCard:nth-child(odd){
+    background: var(--color-primary-1);
+}
+
+.minCard:nth-child(even){
+    background: var(--color-secondary-1);
+}
+.minCard .img{
+    width: 78px;
+    height: 78px;
+    margin-bottom: 10px;
+}
+.minCard #body .title{
+    display: flex;
+}
+.minCard #body .title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin: 0;
+}
+.minCard:nth-child(odd) #body .title{
+    color: var(--color-primary-4);
+}
+
+.minCard:nth-child(even) #body .title{
+    color: var(--color-secondary-4);
+}
+
+.minCard #body .text{
+    font-size: 1.0rem;
+    font-weight: normal;
+    color: var(--color-black);
+    margin-bottom: 5px;
+    color: var(--color-primary-4);
+}
