@@ -15,3 +15,8 @@ $(window).on("scroll", function () {
     nav.removeClass("gmd-5");
   }
 });
+
+// go to market page
+$("#MarketPlace > #goTOMarketPlace").click(function () {
+  window.location.href = "market.html";
+});

@@ -1,7 +1,7 @@
 .side-card{
     display: flex;   
     justify-content: space-around;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .side-card:nth-child(even){
@@ -27,7 +27,7 @@
 
 @media screen and (max-width: 480px){
     .side-card{
-        flex-direction: column;
+        flex-direction: column !important;
     }
     .side-card #body{
         flex-direction: column;

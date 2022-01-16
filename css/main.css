@@ -11,7 +11,7 @@
     --color-primary: #1ECBE1;
     --color-primary-3: #1399AA;
     --color-primary-4: #0D5661;
-    --color-primary-5: #1D3235;
+    --color-primary-5: #26272b;
 
     --color-secondary-1: #8E9EF5;
     --color-secondary-2: #6074E0;
@@ -45,7 +45,7 @@ body{
     margin-bottom: 5px;
 
 }
-.subTitle{
+.sub-title{
     font-size: small;
     font-weight: 600;
     color: var(--color-grey-dark);

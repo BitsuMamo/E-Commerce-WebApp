@@ -1,15 +1,16 @@
 @import url("./main.css");
 @import url("./minCard.css");
 @import url("./sideCard.css");
+@import url("./foot.css");
 
 body{
     background-color: var(--color-primary-5);
-    height: 1000vh;
 }
 /* hero */
 #hero {
     background: url("../img/joseph-chan-uTFiFYeQhlI-unsplash.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-position: center;
 
   height: 100vh;
@@ -22,12 +23,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 #hero #mask #haderText{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 #hero #mask #haderText > .title{
     font-size: 2.5rem;
@@ -35,13 +38,13 @@ body{
     color: var( --color-tertiary);
     text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 }
-#hero #mask #haderText > .subTitle{
+#hero #mask #haderText > .sub-title{
     font-size: 1.5rem;
     color: var(--color-grey);
 }
 
 .nav-scroll{
-    background-color: var(--color-primary-2);
+    background-color:var( --color-secondary-1);
 }
 #hero #nav{
     padding: 10px;
@@ -56,7 +59,7 @@ body{
 
 /* overlay */
 #overlay {
-  position: absolute;
+  /* position: absolute; */
   top: 60vh;
   left: 0;
   width: 100%;
@@ -64,6 +67,108 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+/* technologies */
+
+#technologies{
+    margin-top: 100px;
+}
+
+
+
+/* go to Marktpaleis */
+#MarketPlace{
+    width: 95%;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 30px;
+
+    min-height: 60vh;
+    background: var( --color-secondary-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+
+}
+
+#MarketPlace p.title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-secondary-3);
+}
+
+#MarketPlace p.sub-title{
+    font-size: 1rem;
+    color: var(--color-secondary-3);
+    text-align: center;
+}
+
+#MarketPlace button#goTOMarketPlace{
+    background-color: var(--color-secondary-2);
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+
+}
+
+/* sponsors */
+#sponsors{
+
+    background: url("../img/joseph-chan-uTFiFYeQhlI-unsplash.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+   
+
+
+    min-height: 60vh;
+   
+}
+
+#sponsors #mask{
+
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 60vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+#sponsors #mask > p.title{
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-tertiary);
+}
+#sponsors #mask > p.sub-title{
+
+    font-size: 1rem;
+    color: var(--color-tertiary);
+    text-align: center;
+}
+#sponsors #mask > #sponsors-list{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sponsors #mask > #sponsors-list > .sponsors-img{
+
+    margin: 20px;
 }
 
 
