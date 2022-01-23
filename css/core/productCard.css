@@ -1,0 +1,110 @@
+.product-card img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    min-width: 300px;
+    /* height: 400px; */
+    border-radius: 10px;
+    
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+}
+.product-card .card-img{
+    border-radius: 20px 20px 20px 20px;
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.product-card .card-img > img{
+   
+    height: 250px;
+    width: 100%;
+
+}
+
+/* user info */
+.product-card .user-info{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    border-radius: 10px;
+    
+    padding: 10px;
+    padding-left: 0;
+}
+.product-card .user-info .user-img{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.product-card .user-info .user-img > img{
+    height: 50px;
+    width: 50px;
+}
+.product-card .user-info .user-name::before{
+    content: '@';
+    color: var(--color-secondary-2);
+    font-size: 20px;
+    font-weight: bold;
+}
+.product-card .user-info .user-name{
+    font-size: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    
+}
+
+/* product info */
+.product-card  .product-info{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    /* padding: 7px; */
+}
+.product-card  .product-info .left{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.product-card  .product-info .left .title{
+    font-size: 20px;
+    color: var(  --color-secondary);
+}
+.product-card  .product-info .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: min-content;
+    padding: 8px;
+    background-color: var(--color-secondary-2);
+    border-radius: 10px;
+}
+.product-card  .product-info .right .price{
+   color: var( --color-tertiary);
+   font-size: 20px;
+   font-weight: bold;
+}
+.product-card  .product-info .right .price::after{
+    content: "BIRR";
+    color: var(--color-secondary-1);
+    font-size: 20px;
+    font-weight: bold;
+ }

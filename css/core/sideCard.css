@@ -14,10 +14,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
+}
+.side-card #img{
+    flex: 1;
+}
+
+.side-card  #img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
 .side-card #body > .title{
     font-size: xx-large;
     color: var(--color-tertiary);
+    text-align: center;
 }
 .side-card #body > .text{
     color: var(--color-grey);

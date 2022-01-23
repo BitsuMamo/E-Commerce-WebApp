@@ -1,6 +1,6 @@
 @import url("./main.css");
-@import url("./minCard.css");
-@import url("./sideCard.css");
+@import url("./core/minCard.css");
+@import url("./core/sideCard.css");
 @import url("./foot.css");
 
 body{
@@ -52,16 +52,60 @@ body{
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     z-index: var(--nav-z-index);
    
+}
+#hero #nav #logo{
+  margin-right: auto;
+  height: 40px;
+  width: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+   
+}
+#hero #nav #logo-name{
+    margin-right: auto;
+    color: var(--color-tertiary);
+     
+}
+#hero #nav #alWays-show{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#hero #nav .navbar-toggler{
+    /* margin-right: 30px; */
+    color: var( --color-secondary-2);
+    /* border-color: var( --color-secondary-2); */
+}
+#hero #nav .navbar-toggler-icon{
+    background-image: url("../img/icon/svg/hamburger.svg");
+}
+
+#hero #nav #nav-links{
+    flex-wrap: wrap;
+    max-width: 10%;
+    max-height: min-content;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* overlay */
 #overlay {
   /* position: absolute; */
-  top: 60vh;
-  left: 0;
+  /* top: 60vh;
+  left: 0; */
   width: 100%;
   background: transparent;
   display: flex;
@@ -172,3 +216,14 @@ body{
 }
 
 
+
+
+
+
+@media screen and (max-width: 480px){
+    #hero #mask #haderText{
+       margin-bottom: 0;
+    }
+
+    
+}

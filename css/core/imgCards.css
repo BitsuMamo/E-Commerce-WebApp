@@ -1,0 +1,66 @@
+@import url("../main.css");
+
+.img-card{
+    height: 300px;
+    min-width:90vw;
+    background-color: blue;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.img-card > img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+
+.img-card > .mask{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg,black,transparent);
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 8px;
+}
+.img-card > .mask > .caption{
+    display: flex;
+    flex-direction: column;
+    max-height: 50%;
+    overflow: hidden;
+}
+
+.img-card > .mask > .caption > .title{
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: var( --color-tertiary);
+}
+.img-card > .mask > .caption > .sub-title{
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--color-grey);
+}
+   
+
+
+@media screen and (max-width: 480px){
+    .img-card{
+       
+        min-width:80vw;
+       
+    }
+
+    
+}
+
+   

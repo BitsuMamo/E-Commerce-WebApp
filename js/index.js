@@ -7,7 +7,7 @@ $(window).on("scroll", function () {
   const heroHeight = hero.height();
   const heightFactor = heroHeight * 0.3;
   if (scrollTop > heightFactor) {
-    nav.animate({ height: "60px" }, 200);
+    // nav.animate({ height: "60px" }, 200);
     nav.addClass("nav-scroll");
     nav.addClass("gmd-5");
   } else {
