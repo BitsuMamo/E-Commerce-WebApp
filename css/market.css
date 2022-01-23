@@ -2,11 +2,13 @@
 @import url("./core/imgCards.css");
 @import url("./core/cart.css");
 @import url("./core/productCard.css");
+@import url("./core/banner.css");
+@import url("./foot.css");
+@import url("./core/minCard.css");
 
 body{
     padding: 0;
     margin: 0;
-    height: 1000vh;
     background-color: var(--color-grey);
 }
 #hero{
@@ -144,6 +146,7 @@ body{
 .things-list > .list::-webkit-scrollbar-thumb {
     background-color: var(--color-secondary-2);
     border-radius: 20px;
+    min-width: 60px;
 }
 .things-list > .list::-webkit-scrollbar-button{
     display: none;
