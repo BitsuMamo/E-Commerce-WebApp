@@ -1,0 +1,13 @@
+@import url("./sideCard.css");
+
+.side-card{
+    margin: auto;
+}
+.side-card{
+    align-items: center;
+}
+.side-card #img > img{
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+}

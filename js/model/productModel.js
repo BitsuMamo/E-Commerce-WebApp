@@ -16,6 +16,7 @@ class Product {
     this.inventory_id = json.inventory_id;
     this.price = json.price;
     this.supplier_id = json.supplier_id;
+    this.img_url = json.img_url;
   }
 }
 

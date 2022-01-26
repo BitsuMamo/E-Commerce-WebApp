@@ -18,6 +18,7 @@
 }
 .side-card #img{
     flex: 1;
+    display: flex;
 }
 
 .side-card  #img > img{
@@ -39,7 +40,7 @@
 
 @media screen and (max-width: 480px){
     .side-card{
-        flex-direction: column !important;
+        flex-direction: column;
     }
     .side-card #body{
         flex-direction: column;

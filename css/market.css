@@ -152,6 +152,11 @@ body{
     display: none;
 }
 
+
+.minCard{
+    flex: none;
+}
+
 @media screen and (max-width: 480px){
     .things-list{
 

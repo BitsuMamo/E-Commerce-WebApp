@@ -106,11 +106,15 @@ body{
   /* position: absolute; */
   /* top: 60vh;
   left: 0; */
-  width: 100%;
+  /* width: 100%; */
   background: transparent;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 
@@ -224,6 +228,10 @@ body{
     #hero #mask #haderText{
        margin-bottom: 0;
     }
+    #overlay{
+        flex-direction: column;
+        width: 100%;
+     }
 
     
 }

@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     z-index: var(--hero-min-card-z-index);
+    flex: 1;
     
 }
 
@@ -31,6 +32,7 @@
     font-weight: bold;
     margin-bottom: 5px;
     margin: 0;
+    text-align: center;
 }
 .minCard:nth-child(odd) #body .title{
     color: var(--color-primary-4);

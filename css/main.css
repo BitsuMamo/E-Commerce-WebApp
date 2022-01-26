@@ -117,3 +117,8 @@ animation: loader-inner 2s infinite ease-in;
 .display-none{
     display: none;
 }
+
+.button{
+    padding: 5px;
+    cursor: pointer;
+}

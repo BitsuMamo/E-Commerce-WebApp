@@ -1,0 +1,46 @@
+@import url("./main.css");
+
+body{
+
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-grey);
+    display: flex;
+    height: 100vh;
+    
+
+}
+.error-box{
+
+    margin: auto;
+    width: min-content;
+}
+.error-box .error-img{
+    height: 70%;
+    margin: auto;
+
+}
+.error-box .error-body{
+    height: 20%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.error-box .error-body .error-sub-titel{
+    
+    font-size: 1.5rem;
+}
+.error-box .error-body .button{
+    color: var(--color-tertiary);
+    padding: 8px;
+    font-weight: bold;
+    border: 2px solid var(--color-secondary-2);
+    border-radius: 6px;
+    width: 102px;
+    background-color: var(--color-secondary-2);
+
+    margin-top: 10px;
+}
