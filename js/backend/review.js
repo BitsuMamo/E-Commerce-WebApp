@@ -19,7 +19,7 @@ async function getReviews() {
   return reviews;
 }
 
-async function getReviewsPerProduct() {
+async function getReviewsPerProduct(amount = 20) {
   var reviews = [];
   try {
     var jqxhr = await $.post(baseUrl + "select.php", {
@@ -54,7 +54,7 @@ async function getReviewsPerProduct() {
   }
 
   let entries = Object.entries(rating);
-  let sorted = entries.sort(sortFunction).slice(0, 10);
+  let sorted = entries.sort(sortFunction).slice(0, amount);
 
   const constructObject = arr => {
     return arr.reduce((acc, val) => {
