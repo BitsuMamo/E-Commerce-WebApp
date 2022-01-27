@@ -32,15 +32,10 @@ $(document).ready(async () => {
 
   $(".buy-and-count > #buy").text(product.price);
   // set the hero image to the product image
-  hero.css(
-    "background-image",
-    `url(https://picsum.photos/id/${productId}/1000/1000)`
-  );
+  hero.css("background-image", `url(${product.img_url})`);
 
   // set sideCard info
-  sideCard
-    .find("div#img > img")
-    .attr("src", `https://picsum.photos/id/${productId}/1000/1000`);
+  sideCard.find("div#img > img").attr("src", `${product.img_url}`);
 
   sideCard.find("div#body > p.title").text(product.name);
   sideCard.find("div#body > p.sub-title").text(product.description);

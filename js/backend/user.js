@@ -1,6 +1,6 @@
 import User from "../model/userModel.js";
 
-var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+var baseUrl = "http://localhost/E-Commerce-Backend/php/";
 async function getUserById(user_id = "") {
   var user = undefined;
   try {

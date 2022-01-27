@@ -1,7 +1,7 @@
 import Product from "../model/productModel.js";
 import { getReviewsPerProduct } from "../backend/review.js";
 
-var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+var baseUrl = "http://localhost/E-Commerce-Backend/php/";
 
 async function getProducts(type = "random") {
   console.log(type);

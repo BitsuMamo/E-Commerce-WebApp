@@ -10,11 +10,12 @@ function getProductCard(product, user, mag = false) {
       img_url: "",
     });
   }
+  console.log(product.img_url);
   var templet = `
     
     <div class="product-card" card-id="${product.id}">
     <div class="card-img">
-      <img src="https://picsum.photos/id/${product.id}/1000/1000" alt="" />
+      <img src=${product.img_url} alt="" />
     </div>
     <div class="user-info">
       <div class="user-img">
