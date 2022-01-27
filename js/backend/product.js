@@ -18,7 +18,7 @@ async function getProducts(type = "random") {
     console.log("[getProducts] error");
   }
 
-  switch(type){
+  switch (type) {
     case "all":
       jqxhr.Data.forEach((element) => {
         Products.push(new Product(element));
@@ -29,38 +29,32 @@ async function getProducts(type = "random") {
       jqxhr.Data.filter((element) => {
         var createdTime = Date.parse(element.created_at);
         var timeDiff = currentTime - createdTime;
-        if(timeDiff <= timeTillStgShowsUp){
+        if (timeDiff <= timeTillStgShowsUp) {
           return true;
         }
         return false;
-      }).forEach(element => {
-       Products.push(new Product(element)); 
+      }).forEach((element) => {
+        Products.push(new Product(element));
       });
       console.log(Products.length);
       break;
 
     case "popular":
-
       var ratings = await getReviewsPerPoduct(50);
 
-      jqxhr.Data.forEach(element => {
-        if(element.id in ratings){
-          Products.push(new Product(element))
+      jqxhr.Data.forEach((element) => {
+        if (element.id in ratings) {
+          Products.push(new Product(element));
         }
       });
-      
+
       break;
-     
+
     case "discount":
-
       break;
-
 
     case "featured":
-
       break;
-
-
   }
 
   return Products;
