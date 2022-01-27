@@ -14,4 +14,4 @@ class Review {
   }
 }
 
-export default Review;
+export { Review };
