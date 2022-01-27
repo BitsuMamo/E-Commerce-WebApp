@@ -7,6 +7,7 @@ class Product {
   price = 0.0;
   supplier_id = "";
   img_url = "";
+  created_at = "";
 
   constructor(json) {
     this.id = json.id;
@@ -17,6 +18,7 @@ class Product {
     this.price = json.price;
     this.supplier_id = json.supplier_id;
     this.img_url = json.img_url;
+    this.created_at = json.created_at;
   }
 }
 
