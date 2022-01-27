@@ -3,6 +3,7 @@
     width: 50px;
     object-fit: cover;
     object-position: center;
+    border-radius: 50%;
 }
 
 
@@ -68,4 +69,10 @@
 
     display: flex;
     flex-direction: column;
+}
+#other-user-input .user-warpper {
+    width: unset;
+}
+#other-user-input .user-warpper p#input{
+    height: 68px;
 }

@@ -1,12 +1,22 @@
 import getUserById from "./backend/user.js";
-import { getProducts, addCart, getProductById } from "./backend/product.js";
+import { getProducts, getProductById } from "./backend/product.js";
 import getProductCard from "./jsx/productCard.js";
-import updateCart from "./jsx/cart.js";
+import { getCart, addToCart } from "./jsx/cart.js";
+import { getProductReviewById, addProductReview } from "./backend/review.js";
+import getReviewCard from "./jsx/reviewCard.js";
+
 $(document).ready(async () => {
   const productId = document.foucsProductId;
   if (productId == undefined) {
     window.location.href = "404.html";
   }
+
+  var cart_ = getCart();
+  cart_ = cart_.filter((ele) => ele == productId);
+  $(".buy-and-count > .badge > p.text").text(cart_.length);
+
+  $(".buy-and-count > #buy").click(buyProduct);
+
   const loading = $(".loader-wrapper");
   const onLoaded = $("#onload");
 
@@ -15,12 +25,12 @@ $(document).ready(async () => {
 
   onLoaded.addClass("display-none");
   //get product info
-  var product = await getProductById(productId);
+  const product = await getProductById(productId);
   if (product == null) {
     window.location.href = "404.html";
   }
-  console.log(product);
 
+  $(".buy-and-count > #buy").text(product.price);
   // set the hero image to the product image
   hero.css(
     "background-image",
@@ -36,14 +46,24 @@ $(document).ready(async () => {
   sideCard.find("div#body > p.sub-title").text(product.description);
 
   var user = await getUserById(product.supplier_id);
-  console.log(user);
 
   sideCard
     .find("div.more div.user-info .user-img > img")
     .attr("src", `https://picsum.photos/id/${user.id}/1000/1000`);
 
-  loading.addClass("display-none");
-  onLoaded.removeClass("display-none");
+  const productHighlights = [
+    product.price + " BIRR",
+    (Math.random() * 10).toFixed() + " /10",
+    "Verified",
+    // product.rating,
+    // product.verified ? "Verified" : "Not Verified",
+  ];
+
+  const highlights = $("#highlights .minCard");
+  for (let index = 0; index < highlights.length; index++) {
+    $($(highlights)[index]).find("p.title").text(productHighlights[index]);
+    console.log("productHighlights[index]", productHighlights[index]);
+  }
 
   var products_types = [
     "all",
@@ -69,6 +89,38 @@ $(document).ready(async () => {
     $(`#more-products-list > .list`).append(productCard);
     $(`#more-products-list > .loader-wrapper`).addClass("display-none");
   });
+
+  const Reviews = await getProductReviewById(productId);
+  Reviews.forEach((element) => {
+    var review = getReviewCard(element, user);
+    $(`.feed-back > #other-user-input`).append(review);
+  });
+
+  const user_input = $(`.feed-back > #user-feedback-input #input`);
+  const user_input_btn = $(`.feed-back > #user-feedback-input #submit`);
+  $(user_input_btn).click(async (e) => {
+    e.stopPropagation();
+    var user = await getUserById(user_id);
+    var review = {
+      user_id: user_id,
+      product_id: productId,
+      description: user_input.val(),
+      rating: 0,
+    };
+    await addProductReview(user, product, review);
+    var review_card = getReviewCard(review);
+    let Reviews = await getProductReviewById(productId);
+    Reviews.forEach((element) => {
+      var review = getReviewCard(element, user);
+      // $(`.feed-back > #other-user-input`).prepend(element);
+      $(`.feed-back > #other-user-input`).prepend(review_card);
+    });
+
+    user_input.val("");
+  });
+
+  loading.addClass("display-none");
+  onLoaded.removeClass("display-none");
 });
 
 function productCilck(e) {
@@ -77,11 +129,19 @@ function productCilck(e) {
   var id = card.attr("card-id");
   window.location.href = `product.html?id=${id}`;
 }
-function buyCilck(e) {
+async function buyCilck(e) {
   e.stopPropagation();
   var card = $(e.target.closest("div.product-card"));
   var id = card.attr("card-id");
-  // var total = addCart(getProductById(id));
-  // updateCart(total);
-  updateCart(1);
+  const product = await getProductById(id);
+  addToCart(product);
+}
+
+async function buyProduct(product) {
+  const productId = document.foucsProductId;
+  addToCart(await getProductById(productId));
+  var cart_ = getCart();
+  cart_ = cart_.filter((ele) => ele == productId);
+  console.log("badge", cart_);
+  $(".buy-and-count > .badge > p.text").text(cart_.length);
 }

@@ -121,6 +121,11 @@ body{
 .productCardClip .user-info-clip{
     flex: 1;
 }
+
+#product-side-card #body .more .buy-and-count{
+    display: flex;
+    width: 100%;
+}
 #product-side-card #body .more #buy{
     color: var( --color-tertiary);
     font-size: 20px;
@@ -141,6 +146,22 @@ body{
     font-weight: bold;
  }
 
+
+.badge{
+    margin-left: 5px;
+    margin-right: 17px;
+    padding: 10px;
+    border: 2px solid var(--color-secondary-2);
+    border-radius: 10px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.badge > .text{
+    font-size: 1rem;
+    color: var(--color-secondary-2);
+}
 
  /* go to Marktpaleis */
 #MarketPlace{

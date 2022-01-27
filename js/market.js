@@ -1,15 +1,17 @@
 import initSlideshow from "./slideshow.js";
-import { getProducts, addCart, getProductById } from "./backend/product.js";
+import { getProducts, getProductById } from "./backend/product.js";
 import getProductCard from "./jsx/productCard.js";
-import updateCart from "./jsx/cart.js";
 // import checkUserLogIn from "./authorization.js";
 import getUserById from "./backend/user.js";
+import { addToCart, getCart, updateCart } from "./jsx/cart.js";
 
 var products_types = ["all", "recent", "popular", "discount", "featured"];
 
 $(document).ready(async () => {
   console.log("ready");
   initSlideshow();
+
+  updateCart(getCart().length);
 
   //var user_id = localStorage.getItem("user_id");
   var user_id = "1";
@@ -56,11 +58,13 @@ function productCilck(e) {
   var id = card.attr("card-id");
   window.location.href = `product.html?id=${id}`;
 }
-function buyCilck(e) {
+async function buyCilck(e) {
   e.stopPropagation();
   var card = $(e.target.closest("div.product-card"));
   var id = card.attr("card-id");
   // var total = addCart(getProductById(id));
   // updateCart(total);
-  updateCart(1);
+  // updateCart(1);
+  const product = await getProductById(id);
+  addToCart(product);
 }
