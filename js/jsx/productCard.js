@@ -1,4 +1,4 @@
-function getProductCard(product, user) {
+function getProductCard(product, user, mag = false) {
   var user = user;
   if (user == undefined) {
     user = new User({
@@ -30,6 +30,24 @@ function getProductCard(product, user) {
         <p class="text price">${product.price}</p>
       </div>
     </div>
+
+    ${
+      mag
+        ? `<div class="mag">
+      <button class="button mag-button" id="sub">
+        <img src="https://www.freeiconspng.com/uploads/subtract-icon-png-16.png" />
+      </button>
+
+      <div class="badge">d
+        <p class="text">0</p>
+      </div>
+
+      <button class="button mag-button" id="add">
+        <img src="https://i.pinimg.com/564x/a5/6d/35/a56d3517bb1323832680fbe7eb342da0.jpg" />
+      </button>
+    </div>`
+        : ""
+    }
   </div>
 
     `;

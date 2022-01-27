@@ -109,6 +109,27 @@
     font-weight: bold;
  }
 
+ .product-card .mag img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    object-position: center;
+ }
+ .product-card .mag{
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    margin-top: 15px;
+    justify-content: center;
+ }
+ .product-card .mag .mag-button{
+    border: none;
+ }
+ .product-card .mag .badge{
+     margin: 0;
+     margin-left: 10px;
+     margin-right: 10px;
+ }
  /* .productCardClip */
 
 .productCardClip{

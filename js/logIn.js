@@ -64,7 +64,7 @@ $(document).ready(function () {
   });
 
   // on login click
-  submitBut.click(function async() {
+  submitBut.click(async function () {
     console.log("submit");
     var userInput_ = {
       userInput: userInput.val().trim(),
@@ -85,7 +85,7 @@ $(document).ready(function () {
     submitBut.attr("disabled", true);
     INPUTS.attr("disabled", true);
 
-    // let serverRes = await askForLogIn();
+    let serverRes = await askForLogIn(userInput_);
     // if (serverRes.logInStatus == "UserInputValidatorError") {
     //   applyError(errorBox, errorBoxList, userInputError);
     // } else {
@@ -117,8 +117,29 @@ function applyError(errorBox, errorBoxList, errors) {
   }
 }
 
-async function askForLogIn() {
-  let response = await fetch(`/api/login`);
-  let data = await response.json();
-  return data;
+// async function askForLogIn() {
+//   let response = await fetch(`/api/login`);
+//   let data = await response.json();
+//   return data;
+// }
+async function askForLogIn(userInput) {
+  console.log(userInput);
+  var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+  var jqxhr;
+  try {
+    var jqxhr = await $.post(baseUrl + "auth.php", {
+      table: "user",
+      data: `${userInput.userInput},${userInput.password}`,
+    });
+    console.log(jqxhr);
+    if (jqxhr.Data.length != 0) {
+      localStorage.clear();
+      localStorage.setItem("user_id", jqxhr.Data[0].id);
+      window.location.href = "/market.html";
+    }
+    console.log("[getProducts] success");
+  } catch (error) {
+    console.log("[getProducts]", error);
+    console.log("[getProducts] error");
+  }
 }

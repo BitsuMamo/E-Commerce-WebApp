@@ -1,4 +1,5 @@
 import UserInputValidator from "./validation.js";
+import User from "./model/userModel.js";
 
 $(document).ready(function () {
   console.log("ready!");
@@ -74,7 +75,7 @@ $(document).ready(function () {
     }
   });
 
-  submitBut.click(function async() {
+  submitBut.click(async function () {
     console.log("submit");
     var userInput_ = {
       fullName: fullName.val().trim(),
@@ -99,7 +100,7 @@ $(document).ready(function () {
     submitBut.attr("disabled", true);
     INPUTS.attr("disabled", true);
 
-    // let serverRes = await askForSignIn();
+    let serverRes = await askForSignIn(userInput_);
     // if (serverRes.logInStatus == "UserInputValidatorError") {
     //   applyError(errorBox, errorBoxList, userInputError);
     // } else {
@@ -131,8 +132,26 @@ function applyError(errorBox, errorBoxList, errors) {
   }
 }
 
-async function askForSignIn() {
-  let response = await fetch(`/api/login`);
-  let data = await response.json();
-  return data;
+async function askForSignIn(userInput) {
+  var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+  var jqxhr;
+  try {
+    var jqxhr = await $.post(baseUrl + "create.php", {
+      table: "user",
+      data: `${userInput.useName},${userInput.password},${
+        userInput.fullName.split("")[0]
+      },${userInput.fullName.split("")[1]},${userInput.phone}`,
+    });
+    var user = new User(jqxhr.Data[0]);
+    console.log(jqxhr.Data[0]);
+    console.log(user);
+    localStorage.clear();
+    localStorage.setItem("user_id", user.id);
+
+    window.location.href = "/market.html";
+    console.log("[getProducts] success");
+  } catch (error) {
+    console.log("[getProducts]", error);
+    console.log("[getProducts] error");
+  }
 }

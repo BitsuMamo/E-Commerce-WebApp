@@ -13,8 +13,8 @@ $(document).ready(async () => {
 
   updateCart(getCart().length);
 
-  //var user_id = localStorage.getItem("user_id");
-  var user_id = "1";
+  var user_id = localStorage.getItem("user_id");
+
   // get user data
   var user = await getUserById(user_id);
 

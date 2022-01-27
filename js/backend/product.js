@@ -1,14 +1,16 @@
 import Product from "../model/productModel.js";
-import getReviewsPerPoduct from "../backend/review.js";
+import { getReviewsPerProduct } from "../backend/review.js";
 
-var baseUrl = "http://localhost/E-Commerce-Backend/php/";
+var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
 
 async function getProducts(type = "random") {
+  console.log(type);
   var Products = [];
   var currentTime = Date.now();
   var timeTillStgShowsUp = 311040000000;
   var jqxhr;
   try {
+    //
     var jqxhr = await $.post(baseUrl + "select.php", {
       table: "product",
       data: "-1",
@@ -40,7 +42,18 @@ async function getProducts(type = "random") {
       break;
 
     case "popular":
-      var ratings = await getReviewsPerPoduct(50);
+      var ratings = await getReviewsPerProduct(50);
+
+      jqxhr.Data.forEach((element) => {
+        if (element.id in ratings) {
+          Products.push(new Product(element));
+        }
+      });
+
+      break;
+
+    case "more":
+      var ratings = await getReviewsPerProduct(50);
 
       jqxhr.Data.forEach((element) => {
         if (element.id in ratings) {

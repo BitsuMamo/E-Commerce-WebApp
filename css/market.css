@@ -123,6 +123,7 @@ body{
     padding-right: 50px;
     margin-top: 40px;
     min-height: 50vh;
+    width: min-content;
 }
 .things-list > .title{
     font-size: 2rem;

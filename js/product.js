@@ -78,6 +78,10 @@ $(document).ready(async () => {
   // get user data
   var user = await getUserById(user_id);
 
+  $(`#user-feedback-input .user-img > img`).attr(
+    "src",
+    `https://picsum.photos/id/${user.id}/1000/1000`
+  );
   // insert product cards by type
 
   var products = await getProducts("more");
@@ -93,10 +97,11 @@ $(document).ready(async () => {
   const Reviews = await getProductReviewById(productId);
   Reviews.forEach((element) => {
     var review = getReviewCard(element, user);
-    $(`.feed-back > #other-user-input`).append(review);
+    $(`.feed-back > #other-user-input`).prepend(review);
   });
 
-  const user_input = $(`.feed-back > #user-feedback-input #input`);
+  const user_input = $(`.feed-back > #user-feedback-input textarea#input`);
+  console.log("user_input", user_input);
   const user_input_btn = $(`.feed-back > #user-feedback-input #submit`);
   $(user_input_btn).click(async (e) => {
     e.stopPropagation();
@@ -104,16 +109,17 @@ $(document).ready(async () => {
     var review = {
       user_id: user_id,
       product_id: productId,
-      description: user_input.val(),
+      description: $(user_input).val(),
       rating: 0,
     };
     await addProductReview(user, product, review);
-    var review_card = getReviewCard(review);
     let Reviews = await getProductReviewById(productId);
+    console.log("Reviews", Reviews);
+    $(`.feed-back > #other-user-input`).empty();
     Reviews.forEach((element) => {
       var review = getReviewCard(element, user);
-      // $(`.feed-back > #other-user-input`).prepend(element);
-      $(`.feed-back > #other-user-input`).prepend(review_card);
+      $(`.feed-back > #other-user-input`).prepend(review);
+      // $(`.feed-back > #other-user-input`).prepend(review_card);
     });
 
     user_input.val("");

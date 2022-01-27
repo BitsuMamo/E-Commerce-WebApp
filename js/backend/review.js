@@ -1,7 +1,8 @@
-import Review from "../model/reviewModel.js";
-var baseUrl = "http://localhost/E-Commerce-Backend/php/";
+import { Review } from "../model/reviewModel.js";
+var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+// "http://localhost/E-Commerce-Backend/php/";
 
-async function getProductReviewById(id = "1") {
+export async function getProductReviewById(id = "1") {
   var reviews = [];
   try {
     var jqxhr = await $.post(baseUrl + "select.php", {
@@ -20,16 +21,16 @@ async function getProductReviewById(id = "1") {
   return reviews.filter((element) => element.product_id == id);
 }
 
-async function addProductReview(user, product, review) {
+export async function addProductReview(user, product, review) {
   console.log("addProductReview ", user, product, review);
   var user_id = user.id;
   var product_id = product.id;
   try {
     var jqxhr = await $.post(baseUrl + "create.php", {
       table: "review",
-      data: `${user_id},${product_id},${review.description},${Number.parseInt(
+      data: `${product_id},${user_id},${review.description},${Number.parseInt(
         review.rating
-      )}`,
+      )} `,
     });
     console.log("[addProductReview] success");
     console.log(jqxhr);
@@ -39,7 +40,7 @@ async function addProductReview(user, product, review) {
   }
 }
 
-async function getReviewsPerProduct(amount = 20) {
+export async function getReviewsPerProduct(amount = 20) {
   var reviews = [];
   try {
     var jqxhr = await $.post(baseUrl + "select.php", {
@@ -85,4 +86,4 @@ async function getReviewsPerProduct(amount = 20) {
 
   return constructObject(sorted);
 }
-export { getProductReviewById, addProductReview, getReviewsPerProduct };
+// export { getProductReviewById, addProductReview, getReviewsPerProduct };

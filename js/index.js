@@ -2,6 +2,7 @@
 const nav = $("#hero #nav");
 const hero = $("#hero");
 
+// nav on scoll change color
 $(window).on("scroll", function () {
   var scrollTop = $(window).scrollTop();
   const heroHeight = hero.height();

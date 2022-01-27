@@ -1,0 +1,14 @@
+@import url("./main.css");
+@import url('./core/cartItem.css');
+@import url("./core/productCard.css");
+@import url("./product.css");
+
+body{
+    background-color: var(--color-grey);
+}
+
+.item-list{
+    width: min-content;
+
+    padding: 10px;
+}
