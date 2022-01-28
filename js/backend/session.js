@@ -1,4 +1,4 @@
-var baseUrl = "http://192.168.43.115:80/E-Commerce-Backend/php/";
+var baseUrl = "http://206.189.19.197:80/E-Commerce-Backend/php/";
 async function startSession(user) {
   var user_id = user.id;
   try {
