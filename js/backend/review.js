@@ -1,5 +1,5 @@
 import { Review } from "../model/reviewModel.js";
-var baseUrl = "http://206.189.19.197:80/E-Commerce-Backend/php/";
+var baseUrl = "http://localhost/E-Commerce-Backend/php/";
 // "http://localhost/E-Commerce-Backend/php/";
 
 export async function getProductReviewById(id = "1") {

@@ -22,7 +22,7 @@ function removeCart(product) {
   var cart = getCart();
   var index = cart.indexOf(product.id);
   cart.splice(index, 1);
-  localStorage.setItem(cart, JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
   updateCart(cart.length);
 }
 

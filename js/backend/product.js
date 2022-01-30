@@ -1,7 +1,7 @@
 import Product from "../model/productModel.js";
 import { getReviewsPerProduct } from "../backend/review.js";
 
-var baseUrl = "http://206.189.19.197:80/E-Commerce-Backend/php/";
+var baseUrl = "http://localhost/E-Commerce-Backend/php/";
 
 async function getProducts(type = "random") {
   console.log(type);
@@ -80,6 +80,7 @@ async function getProductById(id = "1") {
       data: id,
     });
   } catch (error) {
+    console.log("[getProductById] ", error);
     console.log("[getProducts] error");
     return null;
   }

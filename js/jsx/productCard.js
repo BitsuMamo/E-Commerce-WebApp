@@ -1,4 +1,4 @@
-function getProductCard(product, user, mag = false) {
+function getProductCard(product, user, mag = false, useFackImage = false) {
   var user = user;
   if (user == undefined) {
     user = new User({
@@ -10,11 +10,15 @@ function getProductCard(product, user, mag = false) {
       img_url: "",
     });
   }
+  let productimg = useFackImage
+    ? `https://picsum.photos/id/${product.id}/1000/1000`
+    : product.img_url;
+
   var templet = `
     
     <div class="product-card" card-id="${product.id}">
     <div class="card-img">
-      <img src="https://picsum.photos/id/${product.id}/1000/1000" alt="" />
+      <img src=${productimg} alt="" />
     </div>
     <div class="user-info">
       <div class="user-img">

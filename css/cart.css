@@ -8,7 +8,17 @@ body{
 }
 
 .item-list{
-    width: min-content;
-
     padding: 10px;
+
+    display: flex;
+
+}
+.list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.list > .product-card{
+    margin: 20px;
+    /* height: max-content; */
 }
