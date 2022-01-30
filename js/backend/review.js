@@ -20,6 +20,24 @@ export async function getProductReviewById(id = "1") {
   }
   return reviews.filter((element) => element.product_id == id);
 }
+export async function getAllReview() {
+  var reviews = [];
+  try {
+    var jqxhr = await $.post(baseUrl + "select.php", {
+      table: "review",
+      data: "-1",
+    });
+    console.log("jqxhr", jqxhr);
+    jqxhr.Data.forEach((element) => {
+      reviews.push(new Review(element));
+    });
+  } catch (error) {
+    console.log("[getProductReviewById] error");
+    console.log(error);
+    return null;
+  }
+  return reviews;
+}
 
 export async function addProductReview(user, product, review) {
   console.log("addProductReview ", user, product, review);

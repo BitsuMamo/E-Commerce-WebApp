@@ -1,0 +1,20 @@
+@import url("./main.css");
+@import url("./core/sideNav.css");
+@import url("./core/table.css");
+
+body{
+    height: 100vh;
+}
+#main{
+    margin-left: 20%;
+    padding: 10px;
+
+    height: 100%;
+}
+.table {
+    width: 100%;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
